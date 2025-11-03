@@ -17,13 +17,13 @@ class OrderSerializer(serializers.ModelSerializer):
 
     def validate_customer_phone(self, value):
         """Validate phone number format (Kazakhstan format)"""
-        if value:
+        if value and value.strip():  # Only validate if phone is provided and not empty
             # Remove spaces and special characters
             phone = re.sub(r'[\s\-\(\)]', '', value)
-            # Check if it matches Kazakhstan phone format
-            if not re.match(r'^\+?7\d{10}$', phone):
+            # Check if it matches Kazakhstan phone format (more flexible)
+            if not re.match(r'^\+?7\d{10}$', phone) and not re.match(r'^\d{10,11}$', phone):
                 raise serializers.ValidationError(
-                    "Неверный формат телефона. Используйте формат: +77771234567"
+                    "Неверный формат телефона. Пример: +77771234567 или 87771234567"
                 )
         return value
 
