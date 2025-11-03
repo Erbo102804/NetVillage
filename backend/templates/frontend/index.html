@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetVillage - Интернет для села</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>NetVillage</h1>
+            <p class="tagline">Качественный интернет для села</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="tariffs-section">
+            <h2>Наши тарифы</h2>
+            <div id="tariffs-container" class="tariffs-grid">
+                <div class="loading">Загрузка тарифов...</div>
+            </div>
+        </section>
+
+        <section id="order-section" class="hidden">
+            <h2>Оформление заказа</h2>
+            <form id="order-form">
+                <input type="hidden" id="tariff-id" name="tariff_id">
+
+                <div class="form-group">
+                    <label for="customer-name">Ваше имя *</label>
+                    <input type="text" id="customer-name" name="customer_name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="customer-email">Email *</label>
+                    <input type="email" id="customer-email" name="customer_email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="customer-phone">Телефон *</label>
+                    <input type="tel" id="customer-phone" name="customer_phone"
+                           placeholder="+77771234567" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Адрес *</label>
+                    <textarea id="address" name="address" rows="3" required></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" id="cancel-order" class="btn btn-secondary">Отмена</button>
+                    <button type="submit" class="btn btn-primary">Оформить заказ</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="payment-section" class="hidden">
+            <h2>Оплата</h2>
+            <div id="payment-info">
+                <p>Ваш заказ создан успешно!</p>
+                <div id="payment-details"></div>
+                <button id="proceed-payment" class="btn btn-primary">Перейти к оплате</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 NetVillage. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
