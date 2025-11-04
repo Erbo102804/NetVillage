@@ -203,7 +203,7 @@ JAZZMIN_SETTINGS = {
     # Top menu
     "topmenu_links": [
         {"name": "Главная", "url": "admin:index", "permissions": ["auth.view_user"]},
-        {"name": "Сайт", "url": "/", "new_window": True},
+        {"name": "🌐 Перейти на сайт", "url": "http://localhost:3000", "new_window": True},
         {"model": "auth.User"},
     ],
 
