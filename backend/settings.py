@@ -190,8 +190,9 @@ JAZZMIN_SETTINGS = {
     "custom_links": {
         "tariffs": [{
             "name": "Посмотреть сайт",
-            "url": "/",
+            "url": "http://localhost:3000",
             "icon": "fas fa-globe",
+            "new_window": True,
         }]
     },
 
