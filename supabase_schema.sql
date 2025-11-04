@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS tariffs (
 -- 2. Создание таблицы заказов
 CREATE TABLE IF NOT EXISTS orders (
     id SERIAL PRIMARY KEY,
-    tariff_id INTEGER NOT NULL REFERENCES tariffs(id) ON DELETE PROTECT,
+    tariff_id INTEGER NOT NULL REFERENCES tariffs(id) ON DELETE RESTRICT,
     amount DECIMAL(10, 2) NOT NULL,
     customer_name VARCHAR(200) NOT NULL,
     customer_email VARCHAR(254) NOT NULL,
