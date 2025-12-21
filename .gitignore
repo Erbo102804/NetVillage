@@ -83,3 +83,6 @@ yarn-error.log*
 # Production
 /staticfiles/
 /media/
+
+# Reports (for local printing only, not tracked in git)
+ACADEMIC_REPORT.md
