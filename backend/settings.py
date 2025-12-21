@@ -23,10 +23,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework.authtoken',
     'corsheaders',
     'payments',
     'tariffs',
     'orders',
+    'basket',
 ]
 
 MIDDLEWARE = [
@@ -144,6 +146,10 @@ REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': [
         'rest_framework.renderers.JSONRenderer',
     ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ],
 }
 
 CORS_ALLOWED_ORIGINS = os.getenv(
@@ -177,6 +183,8 @@ JAZZMIN_SETTINGS = {
         "tariffs.Tariff": "fas fa-wifi",
         "orders.Order": "fas fa-shopping-cart",
         "payments.Payment": "fas fa-credit-card",
+        "basket.Basket": "fas fa-shopping-basket",
+        "basket.BasketItem": "fas fa-box",
     },
 
     # UI Tweaks
