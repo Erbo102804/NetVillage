@@ -86,3 +86,4 @@ yarn-error.log*
 
 # Reports (for local printing only, not tracked in git)
 ACADEMIC_REPORT.md
+ACADEMIC_REPORT.txt
