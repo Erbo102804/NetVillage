@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetVillage - Высокоскоростной интернет для сельской местности</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Modern Hero Section with Gradient -->
+    <div class="hero">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-content">
+                    <div class="logo">
+                        <i class="fas fa-satellite-dish"></i>
+                        <span>NetVillage</span>
+                    </div>
+                    <div class="nav-links">
+                        <a href="#tariffs" class="nav-link">Тарифы</a>
+                        <a href="#features" class="nav-link">Преимущества</a>
+                        <a href="#coverage" class="nav-link">Покрытие</a>
+                        <a href="#contact" class="nav-link">Контакты</a>
+                    </div>
+                    <a href="http://localhost:8000/admin/" target="_blank" class="admin-btn">
+                        <i class="fas fa-user-shield"></i>
+                        <span>Админ</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="hero-content">
+            <div class="container">
+                <div class="hero-text">
+                    <h1 class="hero-title">Высокоскоростной интернет<br>для вашего дома</h1>
+                    <p class="hero-subtitle">Современные технологии Starlink и Ubiquiti<br>для стабильного соединения до 200 Мбит/с</p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">1 Гбит/с</div>
+                            <div class="stat-label">Скорость сети</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">15 км</div>
+                            <div class="stat-label">Радиус покрытия</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">99.9%</div>
+                            <div class="stat-label">Надежность</div>
+                        </div>
+                    </div>
+                    <a href="#tariffs" class="cta-button">
+                        <span>Выбрать тариф</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Animated Background -->
+        <div class="hero-bg">
+            <div class="circle circle-1"></div>
+            <div class="circle circle-2"></div>
+            <div class="circle circle-3"></div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Почему NetVillage?</h2>
+            <p class="section-subtitle" data-aos="fade-up">Современные технологии для вашего комфорта</p>
+            <div class="features-grid">
+                <div class="feature-card glass" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Высокая скорость</h3>
+                    <p>До 200 Мбит/с на абонента благодаря технологии Starlink и радиосети Ubiquiti</p>
+                </div>
+                <div class="feature-card glass" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Надежность</h3>
+                    <p>5 точек доступа Starlink обеспечивают бесперебойную работу сети 24/7</p>
+                </div>
+                <div class="feature-card glass" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3>Широкое покрытие</h3>
+                    <p>Радиус покрытия до 15 км без прокладки кабелей</p>
+                </div>
+                <div class="feature-card glass" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Поддержка 24/7</h3>
+                    <p>Техническая поддержка и быстрое решение проблем в любое время</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tariffs Section -->
+    <section id="tariffs" class="tariffs-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Выберите свой тариф</h2>
+            <p class="section-subtitle" data-aos="fade-up">Гибкие тарифные планы для любых потребностей</p>
+            <div id="tariffs-container" class="tariffs-grid">
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>Загрузка тарифов...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Modal -->
+    <div id="order-modal" class="modal hidden">
+        <div class="modal-overlay" id="modal-overlay"></div>
+        <div class="modal-content glass">
+            <button class="modal-close" id="modal-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-header">
+                <i class="fas fa-check-circle"></i>
+                <h2>Оформление заказа</h2>
+                <p>Заполните форму, и мы свяжемся с вами</p>
+            </div>
+            <form id="order-form">
+                <input type="hidden" id="tariff-id" name="tariff_id">
+
+                <div class="form-group">
+                    <label for="customer-name">
+                        <i class="fas fa-user"></i>
+                        Ваше имя
+                    </label>
+                    <input type="text" id="customer-name" name="customer_name" placeholder="Иван Иванов" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="customer-email">
+                        <i class="fas fa-envelope"></i>
+                        Email
+                    </label>
+                    <input type="email" id="customer-email" name="customer_email" placeholder="example@mail.kz" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="customer-phone">
+                        <i class="fas fa-phone"></i>
+                        Телефон
+                    </label>
+                    <input type="tel" id="customer-phone" name="customer_phone" placeholder="+7 777 123 45 67" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Адрес подключения
+                    </label>
+                    <textarea id="address" name="address" rows="3" placeholder="Укажите точный адрес для установки оборудования" required></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" id="cancel-order" class="btn btn-secondary">
+                        <i class="fas fa-times"></i>
+                        Отмена
+                    </button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-check"></i>
+                        Оформить заказ
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Coverage Section -->
+    <section id="coverage" class="coverage-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Как это работает?</h2>
+            <div class="coverage-content">
+                <div class="coverage-steps" data-aos="fade-right">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Спутниковый интернет Starlink</h4>
+                            <p>5 станций с суммарной скоростью до 1 Гбит/с</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Радиосеть Ubiquiti</h4>
+                            <p>5 мачт с точками доступа покрывают до 15 км</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Абонентское оборудование</h4>
+                            <p>NanoStation на вашем доме для приема и раздачи Wi-Fi</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="coverage-visual" data-aos="fade-left">
+                    <div class="network-diagram">
+                        <div class="diagram-item satellite">
+                            <i class="fas fa-satellite"></i>
+                            <span>Starlink</span>
+                        </div>
+                        <div class="diagram-item tower">
+                            <i class="fas fa-broadcast-tower"></i>
+                            <span>Радиомачта</span>
+                        </div>
+                        <div class="diagram-item home">
+                            <i class="fas fa-home"></i>
+                            <span>Ваш дом</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-content glass">
+                <div class="contact-info">
+                    <h2>Свяжитесь с нами</h2>
+                    <p>Готовы подключить интернет? Мы всегда на связи!</p>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <strong>Телефон</strong>
+                            <p>+7 777 123 45 67</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Email</strong>
+                            <p>info@netvillage.kz</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <strong>Режим работы</strong>
+                            <p>Пн-Пт: 9:00 - 18:00<br>Сб-Вс: 10:00 - 16:00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-satellite-dish"></i>
+                        <span>NetVillage</span>
+                    </div>
+                    <p>Высокоскоростной интернет для сельской местности на базе технологий Starlink и Ubiquiti</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Навигация</h4>
+                    <ul>
+                        <li><a href="#tariffs">Тарифы</a></li>
+                        <li><a href="#features">Преимущества</a></li>
+                        <li><a href="#coverage">Покрытие</a></li>
+                        <li><a href="#contact">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +7 777 123 45 67</li>
+                        <li><i class="fas fa-envelope"></i> info@netvillage.kz</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Казахстан</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 NetVillage. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Notification -->
+    <div id="notification" class="notification hidden">
+        <div class="notification-content">
+            <i class="fas fa-check-circle"></i>
+            <p id="notification-message"></p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
