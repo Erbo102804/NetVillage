@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.db.models import Count, Sum
 from django.conf import settings
 from django.conf.urls.static import static
@@ -31,8 +31,12 @@ def frontend_index(request):
     """Serve frontend index.html"""
     return render(request, 'frontend/index.html', {})
 
+def redirect_to_admin(request):
+    """Redirect to admin panel"""
+    return redirect('/admin/')
+
 urlpatterns = [
-    path('', frontend_index, name='home'),
+    path('', redirect_to_admin, name='home'),
     path('admin/dashboard/', admin.site.admin_view(admin_dashboard), name='admin-dashboard'),
     path('admin/', admin.site.urls),
     path('api/health/', health_check),
