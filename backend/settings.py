@@ -154,64 +154,68 @@ CORS_ALLOWED_ORIGINS = os.getenv(
 # Only allow all origins in development
 CORS_ALLOW_ALL_ORIGINS = DEBUG
 
-# Jazzmin Admin Customization
+# Jazzmin Admin Customization - Modern World-Class Design
 JAZZMIN_SETTINGS = {
     # Title
     "site_title": "NetVillage Admin",
-    "site_header": "NetVillage",
-    "site_brand": "NetVillage - Интернет для села",
+    "site_header": "NetVillage Control Panel",
+    "site_brand": "NetVillage",
     "site_logo": None,
-    "welcome_sign": "Добро пожаловать в панель управления NetVillage",
+    "site_logo_classes": "img-circle",
+    "site_icon": None,
+    "welcome_sign": "Добро пожаловать в панель управления",
+    "copyright": "NetVillage © 2025",
 
-    # Copyright
-    "copyright": "NetVillage",
-
-    # Search model
+    # Search
     "search_model": ["auth.User", "tariffs.Tariff", "orders.Order"],
 
-    # Icons
-    "icons": {
-        "auth": "fas fa-users-cog",
-        "auth.user": "fas fa-user",
-        "auth.Group": "fas fa-users",
-        "tariffs.Tariff": "fas fa-wifi",
-        "orders.Order": "fas fa-shopping-cart",
-        "payments.Payment": "fas fa-credit-card",
-    },
+    # Top Menu
+    "topmenu_links": [
+        {"name": "📊 Главная", "url": "admin:index", "permissions": ["auth.view_user"]},
+        {"name": "🌐 Перейти на сайт", "url": "http://localhost:3000", "new_window": True},
+        {"name": "📈 Статистика", "url": "/admin/dashboard/", "new_window": False},
+        {"model": "auth.User"},
+    ],
 
-    # UI Tweaks
+    # User Menu
+    "usermenu_links": [
+        {"name": "🔐 Профиль", "url": "admin:password_change"},
+        {"model": "auth.user"},
+    ],
+
+    # Side Menu
     "show_sidebar": True,
     "navigation_expanded": True,
     "hide_apps": [],
     "hide_models": [],
     "order_with_respect_to": ["tariffs", "orders", "payments", "auth"],
 
-    # Custom links
-    "custom_links": {
-        "tariffs": [{
-            "name": "Посмотреть сайт",
-            "url": "http://localhost:3000",
-            "icon": "fas fa-globe",
-            "new_window": True,
-        }]
+    # Icons - Modern Font Awesome 6
+    "icons": {
+        "auth": "fas fa-users-cog",
+        "auth.user": "fas fa-user",
+        "auth.Group": "fas fa-users",
+        "tariffs.Tariff": "fas fa-wifi",
+        "orders.Order": "fas fa-cart-shopping",
+        "payments.Payment": "fas fa-credit-card",
     },
 
-    # Theme
-    "theme": "darkly",  # Options: default, darkly, simplex, cosmo, flatly, etc
-    "dark_mode_theme": "darkly",
+    # Custom Icons for specific models
+    "default_icon_parents": "fas fa-folder",
+    "default_icon_children": "fas fa-file",
 
-    # Top menu
-    "topmenu_links": [
-        {"name": "Главная", "url": "admin:index", "permissions": ["auth.view_user"]},
-        {"name": "🌐 Перейти на сайт", "url": "http://localhost:3000", "new_window": True},
-        {"model": "auth.User"},
-    ],
+    # Related Modal - Modern
+    "related_modal_active": True,
 
-    # User menu
-    "usermenu_links": [
-        {"model": "auth.user"}
-    ],
-
-    # Show language chooser
+    # UI Tweaks - Modern Design
+    "custom_css": None,
+    "custom_js": None,
     "show_ui_builder": False,
+
+    # Theme - Modern Dark/Light
+    "theme": "cosmo",  # Modern light theme
+    "dark_mode_theme": "darkly",  # Modern dark theme
+
+    # Language Chooser
+    "language_chooser": False,
 }
